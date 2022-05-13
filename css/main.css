@@ -1,0 +1,50 @@
+@import url(common.css);
+
+/* Slide */
+.slide_wrapper{
+    height: 100vh;
+    overflow: hidden;
+    position: relative;   
+}
+.slide_container{
+    height: 100%;
+    position: absolute;
+    left: 0;
+    transition: left 0.3s ease-out;
+    display: flex;
+}
+.slide_container li{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slide_container .slide1{
+    background-image: url(../images/slide1_bg.jpg);
+}
+.slide_container .slide2{
+    background-image: url(../images/slide2_bg_web.png);
+}
+.slide_container .slide3{
+    background-image: url(../images/silde3_bg.png);
+}
+/* Core values */
+/* Products */
+.products_tt{
+    font-size: calc(var(--body-fz)*2.25);
+    text-transform: uppercase;
+}
+/* Certification */
+/* Celltrion news */
+.news_content{
+    font-weight: 500;
+}
+/* IR */
+.ir_tt{
+    font-size: calc(var(--body-fz)*1.75);
+}

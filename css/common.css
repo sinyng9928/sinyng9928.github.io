@@ -1,0 +1,223 @@
+@import url(reset.css);
+@import url(normalize.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+:root{
+    --body-ff: 'Noto Sans KR', sans-serif;
+    --title-ff: 'Montserrat', sans-serif;
+    --body-fz: 1rem;
+    --line-height: 27px;
+    --primary-c: #55b954;
+    --secondary-c: #f38d36;
+    --white: #fff;
+    --black: #000;
+    --body-tc: #707070;
+    --con-width: 1290px;
+    --title-color: #5c5c5c;
+}
+
+/* Typography */
+body{
+    font-family: var(--body-ff);
+    font-size: var(--body-fz);
+    font-weight: 400;
+    line-height: var(--line-height);
+    color: var(--body-tc);
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--title-ff);
+    font-weight: bold;
+    color: var(--title-color);
+    line-height: calc(var(--line-height)*2);
+    text-transform: uppercase;
+    text-align: center;
+}
+.banner_tt{
+    font-size: calc(var(--body-fz)*4.375);
+    color: var(--white);
+    line-height: calc(var(--body-fz)*4.375);
+    text-align: center;
+}
+.content_tt{
+    font-size: calc(var(--body-fz)*3);
+}
+.content_header{
+    text-align: center;
+}
+.content_header:after{
+    content: '';
+    width: 100px;
+    height: 4px;
+    display: block;
+    background: var(--body-tc);
+    margin: var(--line-height) auto;
+}
+.content_header.w_color:after{
+    background: var(--white);
+}
+.content_header.b_color:after{
+    background: var(--black);
+}
+.content_sub_en_tt{
+    font-size: calc(var(--body-fz)*1.75);
+}
+.content_sub_ko_tt{
+    font-family: var(--body-ff);
+    font-size: calc(var(--body-fz)*1.75);
+}
+.banner_text{
+    font-size: calc(var(--body-fz)*1.125);
+    color: var(--white);
+    text-align: center;
+    width: 460px;
+}
+em{
+    color: var(--primary-c);
+}
+a{
+    text-decoration: none;
+}
+h4{
+    font-size: calc(var(--body-fz)*1.5);
+}
+.s_color{
+    color: var(--secondary-c);
+}
+.b_color{
+    color: var(--black);
+}
+.p_color{
+    color: var(--primary-c);
+}
+/* Buttons */
+.btn{
+    text-transform: uppercase;
+    padding: 0 25px;
+    border: 1px solid #000;
+    line-height: 50px;
+    border-radius: 25px;
+    background: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn.more span{
+    transform: translateX(5px);
+    transition: 0.2s;
+}
+.btn.w_color{
+    border-color: var(--white);
+    color: var(--white);
+}
+a.btn{
+    text-decoration: none;
+}
+.normal{
+    color: #000;
+}
+.btn:hover{
+    color: #55b954;
+    border-color: #55b954;
+}
+.btn.more:hover span{
+    transform: translateX(15px);
+}
+
+/* Forms */
+form#search{
+    width: 600px;
+    height: 60px;
+    border: 1px solid var(--primary-c);
+    box-sizing: border-box;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+form#search *{
+    border: none;
+    background: none;
+    color: var(--primary-c);
+    outline: none;
+}
+form#search input::placeholder{
+    color: var(--primary-c);
+    font-size: calc(var(--body-fz)*1.25);
+}
+form#search button span{
+    font-size: calc(var(--body-fz)*2.5);
+}
+/* Colors */
+.w_color{
+    color: var(--white);
+}
+.primary_bg{
+    background: var(--primary-c);
+}
+.primary_color{
+    color: var(--primary-c);
+}
+
+/* Layout */
+.hidden{
+    display: none;
+}
+.content_pd{
+    padding: calc(var(--line-height)*2) 0;
+}
+.container{
+    width: 1290px;
+}
+/* HEADER */
+.logo a{
+    display: block;
+    width: 180px;
+    height: 46px;
+    text-indent: -9999em;
+    background: url(../images/logo.png) no-repeat;
+}
+header{
+    position: absolute;
+    left: 0; right: 0;
+    z-index: 1;
+    text-transform: uppercase;
+    padding: 0 50px;
+}
+header .main_menu a, header .top_links a{
+    color: var(--white);
+}
+header a:hover{
+    color: var(--primary-c);
+}
+header > .header_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header > .header_top .main_menu{
+    display: flex;
+    gap: 50px;
+}
+header > .header_top .main_menu .sub_menu{
+    display: flex;
+    gap: 50px;
+    display: none;
+}
+header > .header_top .top_links ul{
+    display: flex;
+    gap: 5px;
+}
+header .sitemap a{
+    color: var(--body-tc);
+}
+header .sitemap nav .site_menu{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+header .sitemap nav .site_menu > li, header .sitemap nav .site_menu > li .sub_menu{
+    display: flex;
+    gap: 50px;
+}
+/* FOOTER */
