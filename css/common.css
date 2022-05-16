@@ -122,7 +122,22 @@ a.btn{
 .btn.more:hover span{
     transform: translateX(15px);
 }
-
+.tab_btn{
+    width: 153px;
+    height: 41px;
+    text-align: center;
+    color: var(--primary-c);
+    font-size: calc(var(--body-fz)*1.125);
+    line-height: 40px;
+    border-radius: 20px 20px 0 0;
+    border: 1px solid var(--primary-c);
+    background: none;
+    box-sizing: border-box;
+}
+.tab_btn.active, .tab_btn:hover{
+    background: var(--primary-c);
+    color: var(--white);
+}
 /* Forms */
 form#search{
     width: 600px;
