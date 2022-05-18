@@ -183,6 +183,9 @@ form#search button span{
 .container{
     width: 1290px;
 }
+section{
+    padding: calc(var(--line-height)*2) 0;
+}
 /* HEADER */
 .logo a{
     display: block;
