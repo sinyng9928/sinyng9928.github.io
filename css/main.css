@@ -2,7 +2,7 @@
 
 /* Slide */
 .slide_wrapper{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     overflow: hidden;
     position: relative;   
@@ -43,12 +43,60 @@
 .slide_container .slide3{
     background-image: url(../images/silde3_bg.png);
 }
+.main_slide .controls a{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.main_slide .controls a span{
+    font-size: 80px;
+}
+.main_slide .controls .prev{
+    left: 40px;
+}
+.main_slide .controls .next{
+    right: 40px;
+}
+.main_slide .indicator{
+    display: flex;
+    position: absolute;
+    left: 50%; bottom: 20px;
+    transform: translateX(-50%);
+    justify-content: center;
+    gap: 5px;
+}
+.main_slide .indicator .pager{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.main_slide .indicator .pager a{
+    display: inline-block;
+    vertical-align: baseline;
+    width: 8px;
+    height: 8px;
+    background: var(--white);
+    opacity: 0.5;
+    border-radius: 50%;
+    text-indent: -999em;
+}
+.main_slide .indicator .pager a.active{
+    opacity: 1;
+}
+.main_slide .indicator .playbtns span{
+    display: none;
+}
+.main_slide .indicator .playbtns span.active{
+    display: block;
+}
 /* Core values */
 .value_contents{
     margin: 0 auto;
     display: flex;
     gap: 30px;
     justify-content: center;
+    align-items: center;
 }
 .value_contents > div{
     width: 300px;
@@ -78,12 +126,160 @@
     font-size: calc(var(--body-fz)*2.25);
     text-transform: uppercase;
 }
+.products{
+    display: flex;
+}
+.products > div{
+    width: 50%;
+    padding: calc(var(--line-height)*2) 0;
+}
+.pro_left{
+    background: url(../images/product_bg.jpg) no-repeat fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 250px;
+}
+.pro_left .content_header p{
+    width: 390px;
+}
+.pro_left .pro_tab ul{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    margin-left: 85px;
+}
+.pro_left .pro_tab li{
+    font-size: calc(var(--body-fz)*1.125);
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+.pro_left .pro_tab li.active{
+    opacity: 1;
+}
+.pro_right{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pro_right > div{
+    display: none;    
+}
+.pro_right > div.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pro_right > div ul{
+    width: 600px;
+    height: 300px;
+    display: flex;
+    overflow: hidden;
+}
+.pro_right .controls a{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.pro_right .controls a span{
+    font-size: 70px;
+    color: #a8a8a8;
+}
+.pro_right .controls a.prev{
+    left: 15px;
+}
+.pro_right .controls a.next{
+    right: 15px;
+}
 /* Certification */
+.certification .content_header p{
+    width: 600px;
+}
+.certification .iso_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 380px;
+}
+.certification .iso_content div{
+    display: flex;
+    flex-direction: column;
+}
+.certification .iso_content div img{
+    margin-bottom: calc(var(--line-height)*2);
+}
 /* Celltrion news */
-.news_content{
+.news{
+    height: 100vh;
+    background: #ebebeb;
+}
+.news .news_wrap > div{
+    width: 416px;
+}
+.news .img_wrap{
+    width: 100%;
+    height: 312px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.news .img_wrap img{
+    object-fit: cover;
+}
+.news .news_wrap{
+    display: flex;
+    gap: 20px;
+}
+.news .news_wrap .news_desc{
+    height: 200px;
+    background: var(--white);
+    padding: 30px;
+    position: relative;
+}
+.news .news_wrap .news_desc .news_content{
+    width: 360px;
     font-weight: 500;
+    font-size: calc(var(--body-fz)*1.5);
+    color: var(--black);
+}
+.news .news_wrap .news_desc .btn{
+    position: absolute;
+    bottom: 30px;
+    right: 25px;
 }
 /* IR */
-.ir_tt{
+.ir{
+    background: url(../images/ir_bg.jpg) no-repeat fixed;
+    background-size: 100% 100%;
+}
+.ir .ir_content{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.ir .ir_tt{
     font-size: calc(var(--body-fz)*1.75);
+}
+.ir .graphs, .ir .content_wrap div{
+    background: var(--white);
+}
+.ir .graphs{
+    display: flex;
+    gap: 242px;
+}
+.ir .content_wrap{
+    display: flex;
+    gap: 25px;
+}
+.ir .content_wrap div{
+    padding: var(--line-height) 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ir .content_wrap div > span{
+    font-size: 120px;
 }

@@ -59,6 +59,11 @@ h1,h2,h3,h4,h5,h6{
 .content_header.b_color:after{
     background: var(--black);
 }
+.content_header > p{
+    font-weight: 500;
+    font-size: calc(var(--body-fz)*1.125);
+    margin: 0 auto;
+}
 .content_sub_en_tt{
     font-size: calc(var(--body-fz)*1.75);
 }
@@ -178,6 +183,7 @@ form#search button span{
 /* Layout */
 .container{
     width: 1290px;
+    margin: 0 auto;
 }
 .hidden{
     display: none;
@@ -289,3 +295,52 @@ header .lang_choose.active{
 }
 
 /* FOOTER */
+footer{
+    background: #ebebeb;
+    padding: calc(var(--line-height)*2) 0;
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    align-items: center;
+}
+footer img{
+    width: 416px;
+    height: 106px;
+}
+footer .company_desc .address, footer .company_desc .tel_num{
+    font-size: calc(var(--body-fz)*1.875);
+    font-weight: 500;
+    line-height: calc(var(--line-height)*2);
+}
+footer .company_desc .company_site{
+    display: flex;
+    gap: 30px;
+}
+footer .company_desc .company_site .slt_box{
+    width: 180px;
+    height: 40px;
+    border: 1px solid #c8c8c8; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-top: 15px;
+}
+footer .company_desc .company_site .slt_box a{
+    color: var(--body-tc);
+}
+footer .company_desc .company_site .slt_box ul{
+    position: absolute;
+    left: 0; right: 0;
+    bottom: 100%;
+    background: #ebebeb;
+    padding: 0 10px;
+    border: 1px solid #c8c8c8;
+    box-sizing: border-box;
+    display: none;
+}
+footer .footer_side{
+    margin-left: 180px;
+}
