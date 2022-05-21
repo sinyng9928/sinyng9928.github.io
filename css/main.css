@@ -2,11 +2,13 @@
 
 /* Slide */
 .slide_wrapper{
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
     position: relative;   
 }
 .slide_container{
+    width: 100%;
     height: 100%;
     position: absolute;
     left: 0;
@@ -20,7 +22,15 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    display: none;
+}
+.slide_container li.active{
     display: flex;
+    justify-content: center;
+}
+.slide_container li .content{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }

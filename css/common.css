@@ -37,6 +37,7 @@ h1,h2,h3,h4,h5,h6{
     color: var(--white);
     line-height: calc(var(--body-fz)*4.375);
     text-align: center;
+    width: 1100px;
 }
 .content_tt{
     font-size: calc(var(--body-fz)*3);
@@ -70,6 +71,7 @@ h1,h2,h3,h4,h5,h6{
     color: var(--white);
     text-align: center;
     width: 460px;
+    margin: calc(var(--line-height)*2) 0 var(--line-height);
 }
 em{
     color: var(--primary-c);
@@ -225,6 +227,12 @@ header > .header_top .top_links ul{
     display: flex;
     gap: 5px;
 }
+header .sitemap{
+    background: var(--white);
+    position: absolute;
+    left: 0; right: 0;
+    display: none;
+}
 header .sitemap a{
     color: var(--body-tc);
 }
@@ -232,7 +240,9 @@ header .sitemap nav .site_menu{
     width: 100vw;
     display: flex;
     flex-direction: column;
-    display: none;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 450px;
 }
 header .sitemap nav .site_menu > li, header .sitemap nav .site_menu > li .sub_menu{
     display: flex;
@@ -248,4 +258,34 @@ header.sticky a{
 header a:hover{
     color: var(--primary-c);
 }
+header .search_form{
+    height: 300px;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+header .search_form.active{
+    display: block;
+}
+header .lang_choose{
+    border: 1px solid var(--body-tc);
+    background: var(--white);
+    padding: 1px 15px;
+    font-size: calc(var(--body-fz)*1.125);
+    box-sizing: border-box;
+    position: absolute;
+    right: 55px;
+    top: 60px;
+    display: none;
+}
+header .lang_choose.active{
+    display: block;
+}
+
 /* FOOTER */
