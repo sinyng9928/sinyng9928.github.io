@@ -283,3 +283,8 @@
 .ir .content_wrap div > span{
     font-size: 120px;
 }
+/* ABOUT */
+.about_banner{
+    height: 100vh;
+    background: url(../images/about_banner_bg.jpg) no-repeat;
+}
