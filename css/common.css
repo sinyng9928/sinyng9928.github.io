@@ -216,7 +216,6 @@ header > .header_top .main_menu{
 header > .header_top .main_menu .sub_menu{
     display: flex;
     gap: 50px;
-    display: none;
 }
 header > .header_top .top_links ul{
     display: flex;
@@ -245,4 +244,12 @@ header.sticky a{
 header a:hover{
     color: var(--primary-c);
 }
+
+/* SEARCH */
+.search_form{
+    width: 100%;
+    background: #fff;
+    
+}
+
 /* FOOTER */
