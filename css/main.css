@@ -205,6 +205,8 @@
 }
 .certification .iso_content div{
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 .certification .iso_content div img{
@@ -212,11 +214,7 @@
 }
 /* Celltrion news */
 .news{
-    height: 100vh;
     background: #ebebeb;
-}
-.news .news_wrap > div{
-    width: 416px;
 }
 .news .img_wrap{
     width: 100%;
@@ -227,10 +225,23 @@
 }
 .news .img_wrap img{
     object-fit: cover;
+    width: 100%;
 }
 .news .news_wrap{
     display: flex;
     gap: 20px;
+}
+.news .news_wrap > div{
+    flex: 1;
+}
+.news .news_wrap > div .btn{
+    display: none;
+}
+.news .news_wrap > div.active{
+    flex: 2;
+}
+.news .news_wrap > div.active .btn{
+    display: block;
 }
 .news .news_wrap .news_desc{
     height: 200px;
@@ -271,6 +282,8 @@
 }
 .ir .content_wrap{
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 25px;
 }
 .ir .content_wrap div{
@@ -438,3 +451,53 @@
     display: block;
 }
 /*  LOCATION */
+.location .location_content{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap: calc(var(--line-height)*2);
+}
+.location .location_content #map{
+    width:1296px;
+    height:486px;
+}
+.location .location_content .addrbox > div{
+    display: none;
+}
+.location .location_content .addrbox > div.active{
+    display: flex;
+    flex-direction: column;
+    gap: var(--line-height);
+}
+.location .location_content .addrbox dl{
+    display: flex;
+    gap: 100px;
+    align-items: baseline;
+}
+.location .location_content .addrbox dl *{
+    vertical-align: middle;
+}
+.location .location_content .addrbox dt span{
+    color: var(--primary-c);
+    font-size: calc(var(--body-fz)*3);
+    margin-right: 20px;
+}
+.location .location_content .addrbox dt{
+    color: var(--primary-c);
+    font-size: calc(var(--body-fz)*1.125);
+    font-weight: bold;
+    width: 200px;
+}
+.location .location_content .addrbox dd{
+    font-size: calc(var(--body-fz)*1.125);
+    text-align: left;
+}
+.location .location_content .addrbox .express_bus dd{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.location .location_content .addrbox .bus_num{
+    color: var(--secondary-c);
+    font-weight: bold;
+}
