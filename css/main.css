@@ -461,12 +461,16 @@
     width:1296px;
     height:486px;
 }
+.location .location_content .addrbox{
+    width: 1296px;
+}
 .location .location_content .addrbox > div{
     display: none;
 }
 .location .location_content .addrbox > div.active{
     display: flex;
     flex-direction: column;
+    justify-content: left;
     gap: var(--line-height);
 }
 .location .location_content .addrbox dl{
