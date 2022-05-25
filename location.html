@@ -449,6 +449,7 @@
                 let l = $(this).find('button').attr('data-lng');
                 makeMap(t, l);
                 $(targetClass).addClass('active');
+                console.log(targetClass);
                 mapContent.removeClass('active');
             });
             tabMenu.eq(0).trigger('click');
