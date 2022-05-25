@@ -262,11 +262,11 @@
                 <h3 class="content_tt b_color">오시는 길</h3>
             </div>
             <div class="tab container">
-                <button class="tab_btn" data-lat="37.3704856" data-lng="126.6433716">1공장</button>
-                <button class="tab_btn" data-lat="37.3735278" data-lng="126.6406196">2공장</button>
-                <button class="tab_btn" data-lat="37.3718854" data-lng="126.6433716">사무동</button>
-                <button class="tab_btn" data-lat="37.3982989" data-lng="126.6337295">임상개발본부</button>
-                <button class="tab_btn" data-lat="37.4949482" data-lng="127.1222675">케미컬사업사무소</button>
+                <button class="tab_btn" data-name="map1" data-lat="37.3704856" data-lng="126.6433716">1공장</button>
+                <button class="tab_btn" data-name="map2" data-lat="37.3735278" data-lng="126.6406196">2공장</button>
+                <button class="tab_btn" data-name="map3" data-lat="37.3718854" data-lng="126.6433716">사무동</button>
+                <button class="tab_btn" data-name="map4" data-lat="37.3982989" data-lng="126.6337295">임상개발본부</button>
+                <button class="tab_btn" data-name="map5" data-lat="37.4949482" data-lng="127.1222675">케미컬사업사무소</button>
             </div>
             <div class="location_content">
                 <div id="map"></div>
@@ -418,30 +418,29 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
             <script>
             function makeMap(lat, lng){
-                var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                var mapContainer = document.getElementById('map'),
                 mapOption = { 
-                    center: new kakao.maps.LatLng(lat, lng), // 지도의 중심좌표
-                    level: 3 // 지도의 확대 레벨
+                    center: new kakao.maps.LatLng(lat, lng),
+                    level: 3
                 };
             
-                var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+                var map = new kakao.maps.Map(mapContainer, mapOption);
                 
-                // 마커가 표시될 위치입니다 
                 var markerPosition  = new kakao.maps.LatLng(lat, lng); 
                 
-                // 마커를 생성합니다
                 var marker = new kakao.maps.Marker({
                     position: markerPosition
                 });
                 
-                // 마커가 지도 위에 표시되도록 설정합니다
                 marker.setMap(map);
                 map.setDraggable(false);
                 map.setZoomable(false);
             }
 
             let tabMenu = $('.tab_btn'),
-                tabContent = $('.location_content #map');
+                tabContent = $('.location_content #map'),
+                targetClass = tabMenu.attr('data-name'),
+                mapContent = $('.addrbox > div');
 
             tabMenu.click(function(){
                 tabMenu.removeClass('active');
@@ -449,7 +448,10 @@
                 let t = $(this).find('button').attr('data-lat');
                 let l = $(this).find('button').attr('data-lng');
                 makeMap(t, l);
-            })
+                $(`.${targetClass}`).addClass('active');
+                mapContent.removeClass('active');
+            });
+            tabMenu.eq(0).trigger('click');
             </script>
         </section>
     </main>
