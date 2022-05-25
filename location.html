@@ -446,12 +446,15 @@
                 $(this).addClass('active');
                 let t = $(this).find('button').attr('data-lat');
                 let l = $(this).find('button').attr('data-lng');
-                let targetClass = $(this).attr('data-name');
                 makeMap(t, l);
-                $(`${targetClass}`).addClass('active');
-                console.log(targetClass);
-                mapContent.removeClass('active');
+
+                activeTab($(this).index());
             });
+            
+            function activeTab(idx){
+                mapContent.hide();
+                mapContent.eq(idx).show();
+            }
             tabMenu.eq(0).trigger('click');
             </script>
         </section>
