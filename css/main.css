@@ -103,11 +103,16 @@
     height: 400px;
     text-align: center;
     border-radius : 50px 0 50px 0;
-    box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: 0.4s ease-in-out;
+}
+.value_contents > div.active{
+    transform: translate(-10px, -10px);
+    box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, 0.15);
 }
 .value_contents div .value_img{
     width: 150px;
@@ -120,6 +125,16 @@
 }
 .value_contents div p{
     display: none;
+    width: 240px;
+}
+.value_contents > div h4{
+    transition: 0.4s ease-in-out;
+}
+.value_contents > div.active h4{
+    transform: translateY(-20px);
+}
+.value_contents > div.active p{
+    display: block;
 }
 /* Products */
 .products_tt{
@@ -153,6 +168,7 @@
     font-size: calc(var(--body-fz)*1.125);
     text-transform: uppercase;
     opacity: 0.5;
+    cursor: pointer;
 }
 .pro_left .pro_tab li.active{
     opacity: 1;
@@ -300,6 +316,7 @@
 .about_banner{
     height: 100vh;
     background: url(../images/about_banner_bg.jpg) no-repeat center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -460,9 +477,6 @@
 .location .location_content #map{
     width:1296px;
     height:486px;
-}
-.location .location_content .addrbox{
-    width: 1296px;
 }
 .location .location_content .addrbox > div{
     display: none;

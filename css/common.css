@@ -1,6 +1,6 @@
 @import url(reset.css);
 @import url(normalize.min.css);
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 
 :root{
     --body-ff: 'Noto Sans KR', sans-serif;
@@ -83,6 +83,7 @@ em{
 }
 a{
     text-decoration: none;
+    color: var(--body-tc);
 }
 h4{
     font-size: calc(var(--body-fz)*1.5);
@@ -225,9 +226,48 @@ header > .header_top .main_menu{
     gap: 50px;
 }
 header > .header_top .main_menu .sub_menu{
-    display: flex;
-    gap: 50px;
+    width: 100%;
+    padding: 1em 0 3em;
+    background: var(--white);
+    justify-content: center;
+    gap: 130px;
+    white-space: nowrap;
+    position: absolute;
+    left: 0; right: 0; top: 90px;
     display: none;
+    border-top: 1px solid #ebebeb;
+}
+header > .header_top .main_menu > li > a{
+    line-height: 90px;
+}
+header > .header_top .main_menu > li:hover .sub_menu{
+    display: flex;
+}
+header > .header_top .main_menu .sub_menu li{
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+header > .header_top .main_menu .sub_menu a{
+    color: var(--body-tc);
+}
+header > .header_top .main_menu .sub_menu > li > a{
+    font-weight: 500;
+    color: var(--black);
+    position: relative;
+}
+header > .header_top .main_menu .sub_menu > li > a:after{
+    content: '';
+    width: calc(100% + 50px);
+    height: 1px;
+    background: #c8c8c8;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 7px);
+}
+header > .header_top .main_menu .sub_menu a:hover{
+    color: var(--primary-c);
 }
 header > .header_top .top_links ul{
     display: flex;
@@ -236,8 +276,13 @@ header > .header_top .top_links ul{
 header .sitemap{
     background: var(--white);
     position: absolute;
-    left: 0; right: 0;
+    left: 0; right: 0; top: 90px;
+    padding: 30px 0;
+    border-top: 1px solid #ebebeb;
     display: none;
+}
+header .sitemap.active{
+    display: block;
 }
 header .sitemap a{
     color: var(--body-tc);
@@ -246,13 +291,50 @@ header .sitemap nav .site_menu{
     width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 0 450px;
+    padding: 0 350px;
+    align-items:stretch;
+    gap: 40px;
 }
 header .sitemap nav .site_menu > li, header .sitemap nav .site_menu > li .sub_menu{
     display: flex;
-    gap: 50px;
+    justify-content: left;
+    gap: 60px;
+}
+header .sitemap nav .site_menu > li > a{
+    width: 120px;
+    position: relative;
+}
+header .sitemap nav .site_menu > li > a:before{
+    content: '';
+    width: 4px;
+    height: 14px;
+    background: var(--primary-c);
+    position: absolute;
+    top: 0;
+    right: calc(100% + 5px);
+    transform: translateY(50%);
+}
+header .sitemap nav .site_menu .sub_menu > li{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+header .sitemap nav .site_menu .sub_menu > li a{
+    font-weight: 300;
+}
+header .sitemap nav .site_menu .sub_menu > li > a{
+    font-weight: 500;
+    color: var(--black);
+    position: relative;
+}
+header .sitemap nav .site_menu .sub_menu > li > a:after{
+    content: '';
+    width: calc(100% + 10px);
+    height: 1px;
+    background: #c8c8c8;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 7px);
 }
 header.sticky{
     background: var(--white);
@@ -271,13 +353,13 @@ header .search_form{
     left: 0;
     right: 0;
     background: var(--white);
-    display: flex;
     justify-content: center;
     align-items: center;
     display: none;
+    border-top: 1px solid #ebebeb;
 }
 header .search_form.active{
-    display: block;
+    display: flex;
 }
 header .lang_choose{
     border: 1px solid var(--body-tc);
@@ -289,6 +371,9 @@ header .lang_choose{
     right: 55px;
     top: 60px;
     display: none;
+}
+header .lang_choose li{
+    cursor: pointer;
 }
 header .lang_choose.active{
     display: block;
@@ -338,8 +423,10 @@ footer .company_desc .company_site .slt_box ul{
     background: #ebebeb;
     padding: 0 10px;
     border: 1px solid #c8c8c8;
-    box-sizing: border-box;
     display: none;
+}
+footer .company_desc .company_site .slt_box.active ul{
+    display: block;
 }
 footer .footer_side{
     margin-left: 180px;
