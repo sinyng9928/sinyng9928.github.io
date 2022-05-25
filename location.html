@@ -262,11 +262,11 @@
                 <h3 class="content_tt b_color">오시는 길</h3>
             </div>
             <div class="tab container">
-                <button class="tab_btn" data-name="map1" data-lat="37.3704856" data-lng="126.6433716">1공장</button>
-                <button class="tab_btn" data-name="map2" data-lat="37.3735278" data-lng="126.6406196">2공장</button>
-                <button class="tab_btn" data-name="map3" data-lat="37.3718854" data-lng="126.6433716">사무동</button>
-                <button class="tab_btn" data-name="map4" data-lat="37.3982989" data-lng="126.6337295">임상개발본부</button>
-                <button class="tab_btn" data-name="map5" data-lat="37.4949482" data-lng="127.1222675">케미컬사업사무소</button>
+                <button class="tab_btn" data-name=".map1" data-lat="37.3704856" data-lng="126.6433716">1공장</button>
+                <button class="tab_btn" data-name=".map2" data-lat="37.3735278" data-lng="126.6406196">2공장</button>
+                <button class="tab_btn" data-name=".map3" data-lat="37.3718854" data-lng="126.6433716">사무동</button>
+                <button class="tab_btn" data-name=".map4" data-lat="37.3982989" data-lng="126.6337295">임상개발본부</button>
+                <button class="tab_btn" data-name=".map5" data-lat="37.4949482" data-lng="127.1222675">케미컬사업사무소</button>
             </div>
             <div class="location_content">
                 <div id="map"></div>
@@ -448,11 +448,7 @@
                 let t = $(this).find('button').attr('data-lat');
                 let l = $(this).find('button').attr('data-lng');
                 makeMap(t, l);
-                mapContent.each(function(){
-                    if($(this).hasClass(targetClass)){
-                        $(this).addClass('active');
-                    }
-                })
+                $(targetClass).addClass('active');
                 mapContent.removeClass('active');
             });
             tabMenu.eq(0).trigger('click');
