@@ -439,7 +439,6 @@
 
             let tabMenu = $('.tab_btn'),
                 tabContent = $('.location_content #map'),
-                targetClass = tabMenu.attr('data-name'),
                 mapContent = $('.addrbox > div');
 
             tabMenu.click(function(){
@@ -447,6 +446,7 @@
                 $(this).addClass('active');
                 let t = $(this).find('button').attr('data-lat');
                 let l = $(this).find('button').attr('data-lng');
+                let targetClass = $(this).attr('data-name');
                 makeMap(t, l);
                 $(`${targetClass}`).addClass('active');
                 console.log(targetClass);
