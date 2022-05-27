@@ -1,38 +1,30 @@
 @import url(common.css);
 
 /* Slide */
-.slide_wrapper{
+.main_slide .swiper-slide{
     width: 100%;
     height: 100vh;
-    overflow: hidden;
-    position: relative;   
-}
-.slide_container{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    transition: left 0.3s ease-out;
-    display: flex;
-}
-.slide_container li{
-    width: 100%;
-    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    display: none;
-}
-.slide_container li.active{
     display: flex;
     justify-content: center;
 }
-.slide_container li .content{
+.slide_container .swiper-slide .content{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+.slide_container .swiper-slide .content .line{
+    width: 100%;
+    height: 1px;
+    background: var(--whie);
+    position: absolute;
+    left: 0;right: 0;
+    top: 50%;
 }
 .slide_container .slide1{
     background-image: url(../images/slide1_bg.jpg);
@@ -43,52 +35,18 @@
 .slide_container .slide3{
     background-image: url(../images/silde3_bg.png);
 }
-.main_slide .controls a{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+.swiper-button-next, .swiper-button-prev {
+    color: var(--white);
 }
-.main_slide .controls a span{
-    font-size: 80px;
-}
-.main_slide .controls .prev{
-    left: 40px;
-}
-.main_slide .controls .next{
-    right: 40px;
-}
-.main_slide .indicator{
-    display: flex;
-    position: absolute;
-    left: 50%; bottom: 20px;
-    transform: translateX(-50%);
-    justify-content: center;
-    gap: 5px;
-}
-.main_slide .indicator .pager{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-.main_slide .indicator .pager a{
-    display: inline-block;
-    vertical-align: baseline;
-    width: 8px;
-    height: 8px;
+.swiper-pagination-bullet{
     background: var(--white);
-    opacity: 0.5;
-    border-radius: 50%;
-    text-indent: -999em;
+    opacity: .5;
 }
-.main_slide .indicator .pager a.active{
+.swiper-pagination-bullet-active{
     opacity: 1;
 }
-.main_slide .indicator .playbtns span{
-    display: none;
-}
-.main_slide .indicator .playbtns span.active{
-    display: block;
+.main_slide .swiper-pagination{
+    bottom: 50px;
 }
 /* Core values */
 .value_contents{
@@ -248,16 +206,28 @@
     gap: 20px;
 }
 .news .news_wrap > div{
+    transition: 0.4s;
+}
+.news .news_wrap > div:nth-of-type(1){
+    flex: 1;
+}
+.news .news_wrap > div:nth-of-type(2){
+    flex: 1;
+}
+.news .news_wrap > div:nth-of-type(3){
     flex: 1;
 }
 .news .news_wrap > div .btn{
     display: none;
 }
-.news .news_wrap > div.active{
+.news .news_wrap > div:hover{
     flex: 2;
 }
 .news .news_wrap > div.active .btn{
     display: block;
+}
+.news .news_wrap > .news_2{
+    padding: 0 20px;
 }
 .news .news_wrap .news_desc{
     height: 200px;

@@ -6,6 +6,12 @@ menu.hover(function(){
     header.addClass('sticky');
     let newHeight = $(this).find('ul').outerHeight() + headerHeight;
     header.stop().animate({height: newHeight}, 300);
+    header.find('*').removeClass('active');
+    if(sitemap.hasClass('active')){
+        sitemapBtn.find('span').text('close');
+    }else{
+        sitemapBtn.find('span').text('menu');
+    }
 },
 function(){
     header.stop().animate({height: headerHeight}, 300);
@@ -17,11 +23,13 @@ let sitemapBtn = $('.sitemap_btn'),
 
 sitemapBtn.click(function(e){
     e.preventDefault();
+    searchForm.removeClass('active');
     sitemap.toggleClass('active');
-    header.toggleClass('sticky');
     if(sitemap.hasClass('active')){
+        header.addClass('sticky');
         sitemapBtn.find('span').text('close');
     }else{
+        header.removeClass('sticky');
         sitemapBtn.find('span').text('menu');
     }
 });
@@ -31,8 +39,18 @@ let searchBtn = $('.search_btn'),
     
 searchBtn.click(function(e){
     e.preventDefault();
+    sitemap.removeClass('active');
     searchForm.toggleClass('active');
-    header.toggleClass('sticky');
+    if(sitemap.hasClass('active')){
+        sitemapBtn.find('span').text('close');
+    }else{
+        sitemapBtn.find('span').text('menu');
+    }
+    if(searchForm.hasClass('active')){
+        header.addClass('sticky');
+    }else{
+        header.removeClass('sticky');
+    }
 });
 
 let langBtn = $('.lang_btn'),

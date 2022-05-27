@@ -6,3 +6,33 @@ valueContent.hover(function(){
 function(){
     $(this).removeClass('active');
 });
+
+let mainSlider = new Swiper('.main_slide',{
+    direction: 'horizontal',
+    loop: true,
+
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+        delay: 4000,
+        pauseonMouseEnter: true,
+
+    },
+});
+
+let newsWrap = $('.news .news_wrap > div');
+
+newsWrap.hover(function(){
+    newsWrap.removeClass('active');
+    $(this).addClass('active');
+},
+function(){
+    $(this).removeClass('active');
+})
