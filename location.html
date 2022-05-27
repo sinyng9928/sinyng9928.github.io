@@ -414,49 +414,6 @@
                 </div>
             </div>
 
-            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cc57ac327cd94cb2270ec5089d560abb"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-            <script>
-            function makeMap(lat, lng){
-                var mapContainer = document.getElementById('map'),
-                mapOption = { 
-                    center: new kakao.maps.LatLng(lat, lng),
-                    level: 3
-                };
-            
-                var map = new kakao.maps.Map(mapContainer, mapOption);
-                
-                var markerPosition  = new kakao.maps.LatLng(lat, lng); 
-                
-                var marker = new kakao.maps.Marker({
-                    position: markerPosition
-                });
-                
-                marker.setMap(map);
-                map.setDraggable(false);
-                map.setZoomable(false);
-            }
-
-            let tabMenu = $('.tab_btn'),
-                tabContent = $('.location_content #map'),
-                mapContent = $('.addrbox > div');
-
-            tabMenu.click(function(){
-                tabMenu.removeClass('active');
-                $(this).addClass('active');
-                let t = $(this).find('button').attr('data-lat');
-                let l = $(this).find('button').attr('data-lng');
-                makeMap(t, l);
-
-                activeTab($(this).index());
-            });
-            
-            function activeTab(idx){
-                mapContent.removeClass('active');
-                mapContent.eq(idx).addClass('active');
-            }
-            tabMenu.eq(0).trigger('click');
-            </script>
         </section>
         <div class="fixed_menu">
             <a href="#"><span class="material-symbols-outlined">headset_mic</span></a>
@@ -506,7 +463,9 @@
         </div>
     </footer>
     
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cc57ac327cd94cb2270ec5089d560abb"></script>    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="js/header.js"></script>
+    <script src="js/location.js"></script>
 </body>
 </html>

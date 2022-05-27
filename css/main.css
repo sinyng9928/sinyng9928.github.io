@@ -449,13 +449,12 @@
     height:486px;
 }
 .location .location_content .addrbox > div{
+    flex-direction: column;
+    gap: var(--line-height);
     display: none;
 }
 .location .location_content .addrbox > div.active{
     display: flex;
-    flex-direction: column;
-    justify-content: left;
-    gap: var(--line-height);
 }
 .location .location_content .addrbox dl{
     display: flex;
