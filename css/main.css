@@ -459,7 +459,7 @@
 .location .location_content .addrbox dl{
     display: flex;
     gap: 100px;
-    align-items: baseline;
+    align-items: center;
 }
 .location .location_content .addrbox dl *{
     vertical-align: middle;
@@ -478,6 +478,7 @@
 .location .location_content .addrbox dd{
     font-size: calc(var(--body-fz)*1.125);
     text-align: left;
+    width: 600px;
 }
 .location .location_content .addrbox .express_bus dd{
     display: flex;
