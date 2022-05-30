@@ -17,10 +17,6 @@ function makeMap(lat, lng){
     map.setDraggable(false);
     map.setZoomable(false);
 
-    function relayout() {    
-        map.relayout();
-    } 
-
 }
 
 let tabMenu = $('.tab_btn'),
@@ -33,7 +29,6 @@ tabMenu.click(function(){
     let t = $(this).find('button').attr('data-lat');
     let l = $(this).find('button').attr('data-lng');
     makeMap(t, l);
-    relayout();
 
     activeTab($(this).index());
 });
