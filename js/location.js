@@ -4,8 +4,10 @@ function makeMap(lat, lng){
         center: new kakao.maps.LatLng(lat, lng),
         level: 3
     };
-
+    mapContainer.style.width = '1296px';
+    mapContainer.style.height = '486px';
     var map = new kakao.maps.Map(mapContainer, mapOption);
+    map.relayout();
     
     var markerPosition  = new kakao.maps.LatLng(lat, lng); 
     
@@ -15,7 +17,6 @@ function makeMap(lat, lng){
     marker.setMap(map);
     map.setDraggable(false);
     map.setZoomable(false);
-    map.relayout();
 }
 
 let tabMenu = $('.tab_btn'),
