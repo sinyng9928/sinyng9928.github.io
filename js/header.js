@@ -3,6 +3,7 @@ let header = $('header'),
     menu = header.find('nav > .main_menu > li'),
     headerHeight = header.outerHeight();
 
+    $('.fixed_menu').hide();
 menu.hover(function(){
     header.addClass('sticky');
     let newHeight = $(this).find('ul').outerHeight() + headerHeight;
@@ -21,8 +22,10 @@ function(){
 $(window).scroll(function(){
     if($(this).scrollTop() > header.outerHeight()){
         header.addClass('sticky');
+        $('.fixed_menu').fadeIn(1000);
     }else{
         header.removeClass('sticky');
+        $('.fixed_menu').fadeOut(1000);
     }
 });
 /* Sitemap */
