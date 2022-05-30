@@ -12,8 +12,6 @@ function makeMap(lat, lng){
         position: markerPosition
     });
     marker.setMap(map);
-    map.setDraggable(false);
-    map.setZoomable(false);
 
 }
 
