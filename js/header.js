@@ -20,9 +20,9 @@ function(){
 });
 $(window).scroll(function(){
     if($(this).scrollTop() > header.outerHeight()){
-        header.addClass('light');
+        header.addClass('sticky');
     }else{
-        header.removeClass('light');
+        header.removeClass('sticky');
     }
 });
 /* Sitemap */

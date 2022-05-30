@@ -6,7 +6,6 @@ function makeMap(lat, lng){
     };
     mapContainer.style.width = '1296px';
     mapContainer.style.height = '486px';
-    map.relayout();
     var map = new kakao.maps.Map(mapContainer, mapOption);
     
     var markerPosition  = new kakao.maps.LatLng(lat, lng); 
@@ -17,6 +16,11 @@ function makeMap(lat, lng){
     marker.setMap(map);
     map.setDraggable(false);
     map.setZoomable(false);
+
+    function relayout() {    
+        map.relayout();
+    } 
+
 }
 
 let tabMenu = $('.tab_btn'),
@@ -29,6 +33,7 @@ tabMenu.click(function(){
     let t = $(this).find('button').attr('data-lat');
     let l = $(this).find('button').attr('data-lng');
     makeMap(t, l);
+    relayout();
 
     activeTab($(this).index());
 });
