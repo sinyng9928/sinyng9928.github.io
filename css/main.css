@@ -10,6 +10,20 @@
     background-size: cover;
     display: flex;
     justify-content: center;
+    position: relative;
+}
+.main_slide svg{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.main_slide svg line{
+    stroke-width: 1px;
+    stroke: var(--white);
+    z-index: 10000;
 }
 .slide_container .swiper-slide .content{
     display: flex;
