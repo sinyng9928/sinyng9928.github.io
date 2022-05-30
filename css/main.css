@@ -94,9 +94,11 @@
 }
 .products{
     display: flex;
+    height: 80vh;
 }
 .products > div{
     width: 50%;
+    height: 100%;
     padding: calc(var(--line-height)*2) 0;
 }
 .pro_left{
@@ -128,16 +130,15 @@
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 .pro_right > div{
-    display: none;    
+    display: none;
+    flex-direction: column;
+    gap: 180px;
 }
 .pro_right > div.active{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 .pro_right > div ul{
     width: 600px;
