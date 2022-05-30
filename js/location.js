@@ -6,8 +6,8 @@ function makeMap(lat, lng){
     };
     mapContainer.style.width = '1296px';
     mapContainer.style.height = '486px';
-    var map = new kakao.maps.Map(mapContainer, mapOption);
     map.relayout();
+    var map = new kakao.maps.Map(mapContainer, mapOption);
     
     var markerPosition  = new kakao.maps.LatLng(lat, lng); 
     
