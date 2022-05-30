@@ -1,3 +1,4 @@
+/* Header */
 let header = $('header'),
     menu = header.find('nav > .main_menu > li'),
     headerHeight = header.outerHeight();
@@ -18,6 +19,7 @@ function(){
     header.removeClass('sticky');
 });
 
+/* Sitemap */
 let sitemapBtn = $('.sitemap_btn'),
     sitemap = $('.sitemap');
 
@@ -34,6 +36,7 @@ sitemapBtn.click(function(e){
     }
 });
 
+/* Search Form */
 let searchBtn = $('.search_btn'),
     searchForm = $('.search_form');
     
@@ -67,7 +70,7 @@ let sltBox = $('.slt_box');
 sltBox.click(function(e){
     e.preventDefault();
     $(this).toggleClass('active');
-    if(sltBox.hasClass('active')){
+    if($(this).hasClass('active')){
         $(this).find('span').text('expand_more');
     }else{
         $(this).find('span').text('expand_less');

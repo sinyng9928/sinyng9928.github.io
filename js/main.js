@@ -1,3 +1,4 @@
+/* Core Values */
 let valueContent = $('.value_contents div');
 
 valueContent.hover(function(){
@@ -7,6 +8,7 @@ function(){
     $(this).removeClass('active');
 });
 
+/* Main Slide */
 let mainSlider = new Swiper('.main_slide',{
     direction: 'horizontal',
     loop: true,
@@ -27,6 +29,7 @@ let mainSlider = new Swiper('.main_slide',{
     },
 });
 
+/* Celltrion News */
 let newsWrap = $('.news .news_wrap > div');
 
 newsWrap.hover(function(){
@@ -35,4 +38,4 @@ newsWrap.hover(function(){
 },
 function(){
     $(this).removeClass('active');
-})
+});
