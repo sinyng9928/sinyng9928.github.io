@@ -4,8 +4,6 @@ function makeMap(lat, lng){
         center: new kakao.maps.LatLng(lat, lng),
         level: 3
     };
-    mapContainer.style.width = '1296px';
-    mapContainer.style.height = '486px';
     var map = new kakao.maps.Map(mapContainer, mapOption);
     
     var markerPosition  = new kakao.maps.LatLng(lat, lng); 
