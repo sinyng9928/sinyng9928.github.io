@@ -9,4 +9,8 @@ btn.click(function(){
     greetingContent.eq($(this).index()).addClass('active');
 });
 
-btn.eq(0).trigger('click');
+if($(location).attr('href').indexOf('chairman') > -1){
+    btn.eq(0).trigger('click');
+}else{
+    btn.eq(1).trigger('click');
+}

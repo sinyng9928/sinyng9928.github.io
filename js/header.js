@@ -18,7 +18,13 @@ function(){
     header.stop().animate({height: headerHeight}, 300);
     header.removeClass('sticky');
 });
-
+$(window).scroll(function(){
+    if($(this).scrollTop() > header.outerHeight()){
+        header.addClass('light');
+    }else{
+        header.removeClass('light');
+    }
+});
 /* Sitemap */
 let sitemapBtn = $('.sitemap_btn'),
     sitemap = $('.sitemap');

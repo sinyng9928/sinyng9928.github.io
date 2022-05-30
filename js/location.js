@@ -12,7 +12,6 @@ function makeMap(lat, lng){
     var marker = new kakao.maps.Marker({
         position: markerPosition
     });
-    
     marker.setMap(map);
     map.setDraggable(false);
     map.setZoomable(false);
@@ -28,6 +27,7 @@ tabMenu.click(function(){
     let t = $(this).find('button').attr('data-lat');
     let l = $(this).find('button').attr('data-lng');
     makeMap(t, l);
+    map.relayout();
 
     activeTab($(this).index());
 });
