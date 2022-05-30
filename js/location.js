@@ -24,8 +24,9 @@ let tabMenu = $('.tab_btn'),
 tabMenu.click(function(){
     tabMenu.removeClass('active');
     $(this).addClass('active');
-    let t = $(this).find('button').attr('data-lat');
-    let l = $(this).find('button').attr('data-lng');
+    let t = $(this).attr('data-lat');
+    let l = $(this).attr('data-lng');
+    console.log(t,l);
     makeMap(t, l);
 
     activeTab($(this).index());
