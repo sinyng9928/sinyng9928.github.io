@@ -94,6 +94,7 @@
 }
 .products{
     display: flex;
+    padding-bottom: 0;
 }
 .products > div{
     width: 50%;
