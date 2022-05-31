@@ -84,9 +84,6 @@
 .value_contents > div.active h4{
     transform: translateY(-20px);
 }
-.value_contents > div.active p{
-    display: block;
-}
 /* Products */
 .products_tt{
     font-size: calc(var(--body-fz)*2.25);
