@@ -199,26 +199,20 @@
 .news .news_wrap > div{
     transition: 0.4s;
 }
-.news .news_wrap > div:nth-of-type(1){
-    flex: 1;
-}
-.news .news_wrap > div:nth-of-type(2){
-    flex: 1;
-}
-.news .news_wrap > div:nth-of-type(3){
-    flex: 1;
-}
 .news .news_wrap > div .btn{
     opacity: 0;
     transform: translateY(30px);
     transition: 0.4s;
 }
-.news .news_wrap > div:hover{
-    flex: 2;
-}
 .news .news_wrap > div.active .btn{
     opacity: 1;
     transform: none;
+}
+.news .news_wrap > div img{
+    transition: 0.4s;
+}
+.news .news_wrap > div:hover img{
+    transform: scale(1.05);
 }
 .news .news_wrap .news_desc{
     height: 200px;

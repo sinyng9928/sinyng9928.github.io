@@ -50,7 +50,7 @@ let ir = $('.ir'),
     irNum = $('.ir .graphs_value');
 
 $(window).scroll(function(){
-    if(!excuted && $(this).scrollTop() > irOST - 500){
+    if(!excuted && $(this).scrollTop() > irOST - 300){
         irGraph.each(function(){
             let targetHeight = $(this).attr('data-height');
             $(this).animate({height: targetHeight}, 900, 'linear');
